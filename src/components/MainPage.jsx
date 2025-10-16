@@ -7,7 +7,14 @@ export function MainPage({ data, setData }) {
     setInputValue(event.target.value);
   }
   function sendMessage() {
-    setData();
+    setData([
+      ...data,
+      {
+        text: inputValue,
+        sender: "robot",
+      },
+    ]);
+    setInputValue("");
   }
   return (
     <main>
@@ -29,7 +36,7 @@ export function MainPage({ data, setData }) {
           <img
             src="footer-icons/send.png"
             onClick={sendMessage}
-            className={inputValue === "" && "hidden"}
+            className={inputValue === "" ? "hidden" : ""}
           />
         </div>
         <div className="footer-bottom">
