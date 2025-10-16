@@ -1,0 +1,104 @@
+.side-bar {
+  width: 70px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f0f4f9;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 160px;
+  transition: all 0.3s;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.side-bar.expand-side-bar {
+  width: 150px;
+}
+.side-bar p {
+  display: none;
+}
+.side-bar.expand-side-bar p {
+  display: block;
+  font-size: 15px !important;
+}
+
+.side-bar > div {
+  width: 100%;
+}
+.side-bar img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  object-position: center;
+}
+.side-bar .humburger-icon {
+  margin: 20px;
+  cursor: pointer;
+}
+
+.side-bar .top-side-bar .new-chat {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  height: 50px;
+  background-color: #e6eaf1;
+  color: gray;
+  font-size: 35px;
+  border-radius: 40px;
+  margin-left: 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.side-bar .top-side-bar .recent-chat {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.side-bar .top-side-bar .recent-chat p {
+  font-weight: bold;
+  color: black;
+  margin: 10px;
+  letter-spacing: 1px;
+}
+
+.side-bar .top-side-bar .history {
+  flex-grow: 1;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.side-bar .top-side-bar {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-bar .bottom-side-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+.side-bar .bottom-side-bar .bottom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  height: 100%;
+  justify-content: space-evenly;
+}
+.side-bar .bottom-side-bar div {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.side-bar .bottom-side-bar div p {
+  margin-left: 6px;
+}
