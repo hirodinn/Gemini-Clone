@@ -5,11 +5,27 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 function App() {
   const model = genAI.getGenerativeModel({ model: "models/gemini-2.5-pro" });
-  async function sendMessage(myText) {
+  async function sendMessage(myText, fromHistory = false) {
     if (!myText.trim()) return;
-    const newMessages = [...data, { text: myText, sender: "user" }];
+    const newMessages = fromHistory
+      ? [
+          {
+            text: myText,
+            sender: "user",
+          },
+        ]
+      : [...data, { text: myText, sender: "user" }];
     setData(newMessages);
-    setHistoryData([...historyData, myText]);
+    const historyShort =
+      myText.length < 5 ? myText.length : myText.slice(0, 4) + "...";
+    if (!fromHistory)
+      setHistoryData([
+        ...historyData,
+        {
+          text: myText,
+          shortText: historyShort,
+        },
+      ]);
     try {
       const result = await model.generateContent(myText);
       const aiResponse = result.response.text();
@@ -31,7 +47,12 @@ function App() {
   const [historyData, setHistoryData] = useState([]);
   return (
     <div className="total-container">
-      <Sidebar show={show} setShow={setShow} historyData={historyData} />
+      <Sidebar
+        show={show}
+        setShow={setShow}
+        historyData={historyData}
+        sendMessage={sendMessage}
+      />
       <MainPage show={show} sendMessage={sendMessage} data={data} />
     </div>
   );

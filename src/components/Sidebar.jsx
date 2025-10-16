@@ -1,7 +1,7 @@
 import "./Sidebar.css";
 import "./ChatHistory";
 import { ChatHistory } from "./ChatHistory";
-export function Sidebar({ show, setShow }) {
+export function Sidebar({ show, setShow, historyData, sendMessage }) {
   function toggleExpand() {
     setShow(!show);
   }
@@ -17,6 +17,7 @@ export function Sidebar({ show, setShow }) {
         </div>
         <div className="recent-chat">
           <p>Recent</p>
+          <ChatHistory historyData={historyData} sendMessage={sendMessage} />
         </div>
       </div>
       <div className="bottom-side-bar">
