@@ -40,7 +40,7 @@ export function MainPage({ data, sendMessage }) {
         <p>Gemini</p>
         <img src="logo.jpeg" />
       </header>
-      <Main data={data} />
+      <Main data={data} sendMessage={sendMessage} />
       <footer>
         <div className="footer-top">
           <input

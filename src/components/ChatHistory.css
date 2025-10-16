@@ -1,5 +1,5 @@
 .history {
-  flex-grow: 1;
+  flex: 1;
   overflow-y: scroll;
   scrollbar-width: none;
 }
@@ -9,6 +9,15 @@
   padding: 7px;
   padding-left: 16px;
   border-radius: 34px;
+  display: flex;
+  align-items: center;
+}
+.each-history img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 7px;
 }
 .each-history:hover {
   background-color: #e6eaf1;

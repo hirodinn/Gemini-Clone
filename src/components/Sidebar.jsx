@@ -12,7 +12,7 @@ export function Sidebar({ show, setShow, historyData, sendMessage, reset }) {
           <img src="sidebar-icons/humburger.png" />
         </div>
         <div className="new-chat" onClick={reset}>
-          <span>+</span>
+          <img src="sidebar-icons/plus.png" />
           <p>New Chat</p>
         </div>
         <div className="recent-chat">
@@ -30,11 +30,11 @@ export function Sidebar({ show, setShow, historyData, sendMessage, reset }) {
           </div>
           <div className="sidebar-activity">
             <img src="sidebar-icons/activity.png"></img>
-            <p className={show && "show"}>Activity</p>
+            <p className={show ? "show" : ""}>Activity</p>
           </div>
           <div className="sidebar-settings">
             <img src="sidebar-icons/settings.png"></img>
-            <p className={show && "show"}>Settings</p>
+            <p className={show ? "show" : ""}>Settings</p>
           </div>
         </div>
       </div>

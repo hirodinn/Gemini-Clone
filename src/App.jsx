@@ -17,9 +17,9 @@ function App() {
       : [...data, { text: myText, sender: "user" }];
     setData(newMessages);
     const historyShort =
-      myText.trim().length < 16
+      myText.trim().length < 14
         ? myText.trim()
-        : myText.slice(0, 16).trim() + "...";
+        : myText.slice(0, 14).trim() + " ...";
     if (!fromHistory)
       setHistoryData([
         ...historyData,

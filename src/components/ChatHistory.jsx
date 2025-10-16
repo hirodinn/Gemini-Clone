@@ -11,6 +11,7 @@ export function ChatHistory({ historyData, sendMessage }) {
               sendMessage(eachHistory.text, true);
             }}
           >
+            <img src="box-icons/message.png" />
             {eachHistory.shortText}
           </div>
         );
