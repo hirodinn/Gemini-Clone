@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Sidebar } from "./components/Sidebar";
-import { Main } from "./components/Main";
+import { Main } from "./components/MainPage";
 
 function App() {
   const [show, setShow] = useState(true);
