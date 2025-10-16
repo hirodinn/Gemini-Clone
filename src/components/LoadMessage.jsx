@@ -6,6 +6,7 @@ export function LoadMessage({ data }) {
         return (
           <div
             className={eachData.sender === "user" ? "message right" : "message"}
+            key={crypto.randomUUID()}
           >
             {eachData.sender !== "user" && <img src="robot.jpeg" />}
             <p>{eachData.text}</p>
