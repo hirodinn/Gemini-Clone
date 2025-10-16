@@ -42,6 +42,11 @@ function App() {
       ]);
     }
   }
+  function reset() {
+    setShow(true);
+    setData([]);
+    setHistoryData([]);
+  }
   const [show, setShow] = useState(true);
   const [data, setData] = useState([]);
   const [historyData, setHistoryData] = useState([]);
@@ -52,6 +57,7 @@ function App() {
         setShow={setShow}
         historyData={historyData}
         sendMessage={sendMessage}
+        reset={reset}
       />
       <MainPage show={show} sendMessage={sendMessage} data={data} />
     </div>

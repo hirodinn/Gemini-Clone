@@ -3,3 +3,13 @@
   overflow-y: scroll;
   scrollbar-width: none;
 }
+.each-history {
+  cursor: pointer;
+  margin: 4;
+  padding: 7px;
+  padding-left: 16px;
+  border-radius: 34px;
+}
+.each-history:hover {
+  background-color: #e6eaf1;
+}

@@ -1,7 +1,7 @@
 import "./Sidebar.css";
 import "./ChatHistory";
 import { ChatHistory } from "./ChatHistory";
-export function Sidebar({ show, setShow, historyData, sendMessage }) {
+export function Sidebar({ show, setShow, historyData, sendMessage, reset }) {
   function toggleExpand() {
     setShow(!show);
   }
@@ -11,13 +11,15 @@ export function Sidebar({ show, setShow, historyData, sendMessage }) {
         <div className="humburger-icon" onClick={toggleExpand}>
           <img src="sidebar-icons/humburger.png" />
         </div>
-        <div className="new-chat">
+        <div className="new-chat" onClick={reset}>
           <span>+</span>
           <p>New Chat</p>
         </div>
         <div className="recent-chat">
           <p>Recent</p>
-          <ChatHistory historyData={historyData} sendMessage={sendMessage} />
+          {show && (
+            <ChatHistory historyData={historyData} sendMessage={sendMessage} />
+          )}
         </div>
       </div>
       <div className="bottom-side-bar">
