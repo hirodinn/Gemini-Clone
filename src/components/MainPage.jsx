@@ -1,6 +1,11 @@
 import "./MainPage.css";
 import { Main } from "./Main";
+import { useState } from "react";
 export function MainPage({ data, setData }) {
+  const [inputValue, setInputValue] = useState("");
+  function updateValue(event) {
+    setInputValue(event.target.value);
+  }
   function sendMessage() {
     setData();
   }
@@ -13,10 +18,19 @@ export function MainPage({ data, setData }) {
       <Main data={data} />
       <footer>
         <div className="footer-top">
-          <input type="text" placeholder="Enter a promt here" />
+          <input
+            type="text"
+            placeholder="Enter a promt here"
+            onChange={updateValue}
+            value={inputValue}
+          />
           <img src="footer-icons/gallery.png" />
           <img src="footer-icons/voice.png" />
-          <img src="footer-icons/send.png" onClick={sendMessage} />
+          <img
+            src="footer-icons/send.png"
+            onClick={sendMessage}
+            className={inputValue === "" && "hidden"}
+          />
         </div>
         <div className="footer-bottom">
           Gemini may display inaccurate info, including about people, so

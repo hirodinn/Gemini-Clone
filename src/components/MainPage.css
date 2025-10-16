@@ -43,8 +43,8 @@ main footer .footer-top {
   border-radius: 50px;
 }
 main footer img {
-  width: 40px;
-  height: 40px;
+  width: 27px;
+  height: 27px;
   object-fit: cover;
   object-position: center;
   margin-left: 10px;
@@ -55,14 +55,19 @@ main footer input {
   height: 100%;
   border: none;
   font-size: 20px;
-  color: gray;
   outline: none;
   padding-left: 20px;
   background: transparent;
+}
+main footer input::placeholder {
+  color: gray;
 }
 main footer input:focus {
   outline: none;
 }
 main footer .footer-bottom {
   font-size: 13px;
+}
+.hidden {
+  display: none;
 }
