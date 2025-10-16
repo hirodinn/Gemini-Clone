@@ -1,17 +1,19 @@
 main {
   flex-grow: 1;
   transition: all 0.3s;
-  background: lightblue;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 main header {
   display: flex;
   justify-content: space-between;
-  height: 50px;
+  height: 60px;
   align-items: center;
   padding: 0 20px;
-  padding-top: 20px;
-  color: white;
+  padding-top: 10px;
+  margin-bottom: 50px;
+  color: #585858;
   font-size: 24px;
   font-weight: bold;
 }
@@ -21,4 +23,54 @@ main header img {
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
+}
+
+main .main-container {
+  flex-grow: 1;
+  width: 90%;
+  max-width: 860px;
+  margin: 0 auto;
+  border: 2px solid;
+}
+
+main footer {
+  height: 90px;
+  width: 90%;
+  max-width: 860px;
+  overflow: hidden;
+  margin: 20px auto;
+  margin-bottom: 7px;
+  text-align: center;
+}
+main footer .footer-top {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background: #f0f4f9;
+  padding-right: 20px;
+  border-radius: 50px;
+}
+main footer img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
+  margin-left: 10px;
+  cursor: pointer;
+}
+main footer input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  font-size: 20px;
+  color: gray;
+  outline: none;
+  padding-left: 20px;
+  background: transparent;
+}
+main footer input:focus {
+  outline: none;
+}
+main footer .footer-bottom {
+  font-size: 13px;
 }
