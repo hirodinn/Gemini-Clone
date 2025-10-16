@@ -1,7 +1,5 @@
-import { useState } from "react";
 import "./Sidebar.css";
-export function Sidebar() {
-  const [show, setShow] = useState(true);
+export function Sidebar({ show, setShow }) {
   function toggleExpand() {
     setShow(!show);
   }
