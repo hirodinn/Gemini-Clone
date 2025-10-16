@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Sidebar } from "./components/Sidebar";
-import { Main } from "./components/MainPage";
+import { MainPage } from "./components/MainPage";
 
 function App() {
   const [show, setShow] = useState(true);
+  const [data, setData] = useState([]);
   return (
     <div className="total-container">
       <Sidebar show={show} setShow={setShow} />
-      <Main show={show} />
+      <MainPage show={show} data={data} setData={setData} />
     </div>
   );
 }

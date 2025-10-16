@@ -11,3 +11,14 @@
   height: 100vh;
   align-items: center;
 }
+
+@media (max-width: 924px) {
+  .total-container {
+    height: 130vh;
+  }
+}
+@media (max-width: 693px) {
+  .total-container {
+    height: 140vh;
+  }
+}

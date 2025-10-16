@@ -1,0 +1,6 @@
+.main-container {
+  flex-grow: 1;
+  width: 90%;
+  max-width: 860px;
+  margin: 0 auto;
+}
