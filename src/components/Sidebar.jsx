@@ -1,4 +1,6 @@
 import "./Sidebar.css";
+import "./ChatHistory";
+import { ChatHistory } from "./ChatHistory";
 export function Sidebar({ show, setShow }) {
   function toggleExpand() {
     setShow(!show);
@@ -15,7 +17,6 @@ export function Sidebar({ show, setShow }) {
         </div>
         <div className="recent-chat">
           <p>Recent</p>
-          <div className="history"></div>
         </div>
       </div>
       <div className="bottom-side-bar">

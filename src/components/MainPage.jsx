@@ -1,40 +1,39 @@
 import "./MainPage.css";
 import { Main } from "./Main";
 import { useState } from "react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
-export function MainPage({ data, setData }) {
+export function MainPage({ data, sendMessage }) {
   const [inputValue, setInputValue] = useState("");
-  const model = genAI.getGenerativeModel({ model: "models/gemini-2.5-pro" });
 
   function updateValue(event) {
     setInputValue(event.target.value);
   }
-  async function sendMessage() {
-    if (!inputValue.trim()) return;
-    const newMessages = [...data, { text: inputValue, sender: "user" }];
-    setData(newMessages);
+  // async function sendMessage(myText = inputValue) {
+  //   if (!inputValue.trim()) return;
+  //   const newMessages = [...data, { text: myText, sender: "user" }];
+  //   setData(newMessages);
+  //   setInputValue("");
+  //   if (myText === inputValue) setHistoryData([...historyData, inputValue]);
+  //   try {
+  //     const result = await model.generateContent(inputValue);
+  //     const aiResponse = result.response.text();
+
+  //     setData([...newMessages, { text: aiResponse, sender: "robot" }]);
+  //   } catch (error) {
+  //     console.error("Gemini API Error:", error);
+  //     setData([
+  //       ...newMessages,
+  //       {
+  //         text: "Sorry, there was a problem connecting to Gemini.",
+  //         sender: "computer",
+  //       },
+  //     ]);
+  //   }
+  // }
+  function clicked() {
+    sendMessage(inputValue);
     setInputValue("");
-    console.log(import.meta.env.VITE_GEMINI_API_KEY);
-
-    try {
-      const result = await model.generateContent(inputValue);
-      const aiResponse = result.response.text();
-
-      setData([...newMessages, { text: aiResponse, sender: "robot" }]);
-    } catch (error) {
-      console.error("Gemini API Error:", error);
-      setData([
-        ...newMessages,
-        {
-          text: "Sorry, there was a problem connecting to Gemini.",
-          sender: "computer",
-        },
-      ]);
-    }
   }
-
   return (
     <main>
       <header>
@@ -49,12 +48,15 @@ export function MainPage({ data, setData }) {
             placeholder="Enter a promt here"
             onChange={updateValue}
             value={inputValue}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") clicked();
+            }}
           />
           <img src="footer-icons/gallery.png" />
           <img src="footer-icons/voice.png" />
           <img
             src="footer-icons/send.png"
-            onClick={sendMessage}
+            onClick={clicked}
             className={inputValue === "" ? "hidden" : ""}
           />
         </div>

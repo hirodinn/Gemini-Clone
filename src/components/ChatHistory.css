@@ -1,0 +1,5 @@
+.history {
+  flex-grow: 1;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
