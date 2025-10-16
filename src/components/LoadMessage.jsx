@@ -1,5 +1,12 @@
+import { useEffect } from "react";
 import "./LoadMessage.css";
-export function LoadMessage({ data }) {
+export function LoadMessage({ data, containerRef }) {
+  useEffect(() => {
+    const containerElem = containerRef.current;
+    if (containerElem) {
+      containerElem.scrollTop = containerElem.scrollHeight;
+    }
+  }, [data, containerRef]);
   return (
     <>
       {data.map((eachData) => {
