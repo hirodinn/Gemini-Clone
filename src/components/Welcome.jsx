@@ -14,7 +14,7 @@ export function Welcome({ sendMessage }) {
       imgSrc: "message",
     },
     {
-      text: "Tell me about React js and React nativ",
+      text: "Tell me about React js and React native",
       imgSrc: "code",
     },
   ];
