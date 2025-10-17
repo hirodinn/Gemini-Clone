@@ -57,3 +57,27 @@
     left: 100%;
   }
 }
+
+.message-text h1,
+.message-text h2,
+.message-text h3 {
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.message-text p {
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+.message-text ul {
+  margin-left: 16px;
+}
+
+.message-text img {
+  width: 200px;
+  border-radius: 8px;
+  margin: 8px 0;
+}

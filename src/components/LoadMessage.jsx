@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 import "./LoadMessage.css";
 export function LoadMessage({ data, containerRef }) {
   useEffect(() => {
@@ -16,7 +17,13 @@ export function LoadMessage({ data, containerRef }) {
             key={crypto.randomUUID()}
           >
             {eachData.sender !== "user" && <img src="robot.jpeg" />}
-            <p>{eachData.text}</p>
+            <div className="message-text">
+              {eachData.sender === "user" ? (
+                <p>{eachData.text}</p>
+              ) : (
+                <ReactMarkdown>{String(eachData.text || "")}</ReactMarkdown>
+              )}
+            </div>
             {eachData.sender === "user" && <img src="logo.jpeg" />}
           </div>
         );
