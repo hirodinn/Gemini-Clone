@@ -16,6 +16,18 @@ function App() {
         ]
       : [...data, { text: myText, sender: "user" }];
     setData(newMessages);
+    setData([
+      ...newMessages,
+      {
+        text: (
+          <span>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea mollitia
+            voluptatum laudantium et, hic a dolorem facilis in tenetur expedita.
+          </span>
+        ),
+        sender: "robot",
+      },
+    ]);
     const historyShort =
       myText.trim().length < 14
         ? myText.trim()

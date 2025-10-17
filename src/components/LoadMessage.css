@@ -25,3 +25,35 @@
   max-width: 530px;
   text-align: justify;
 }
+
+.message span {
+  background-color: gray;
+  color: transparent;
+  position: relative;
+  line-height: 1.7;
+}
+.message span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.664),
+    rgba(255, 255, 255, 0.829) 30%,
+    rgba(255, 255, 255, 0.829) 70%,
+    rgba(255, 255, 255, 0.603)
+  );
+  margin-left: 5px;
+  animation: 0.9s loadingAnimation linear infinite;
+}
+@keyframes loadingAnimation {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
