@@ -18,10 +18,11 @@ export function LoadMessage({ data, containerRef }) {
           >
             {eachData.sender !== "user" && <img src="robot.jpeg" />}
             <div className="message-text">
-              {eachData.sender === "user" ? (
+              {eachData.sender === "user" ||
+              typeof eachData.text !== "string" ? (
                 <p>{eachData.text}</p>
               ) : (
-                <ReactMarkdown>{String(eachData.text || "")}</ReactMarkdown>
+                <ReactMarkdown>{eachData.text}</ReactMarkdown>
               )}
             </div>
             {eachData.sender === "user" && <img src="logo.jpeg" />}
