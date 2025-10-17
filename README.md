@@ -1,24 +1,24 @@
 # Gemini Chatbot Clone
 
-A frontend-only AI chatbot inspired by Gemini. Users can interact with the chatbot directly in the browser using the OpenAI API.
+A frontend-only AI chatbot inspired by Gemini. Users can interact with the chatbot directly in the browser using the Gemini API (Google Generative Language).
 
 ---
 
 ## Features
 
 * Interactive chat interface
-* AI-powered responses via OpenAI API
+* AI-powered responses via Gemini API (Google Generative Language)
 * Chat history saved in the session
 * Responsive design for desktop and mobile
 * send messages from the chat hisory
-* fomrat the response to an interactive text format
+* format the response to an interactive text format
 
 ---
 
 ## Tech Stack
 
 * **Frontend:** HTML, CSS, React.js
-* **AI Integration:** OpenAI GPT API
+* **AI Integration:** Gemini API (Google Generative Language)
 * **Environment Variables:** `.env` file for API key
 
 ---
