@@ -20,10 +20,21 @@ function App() {
       ...newMessages,
       {
         text: (
-          <span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea mollitia
-            voluptatum laudantium et, hic a dolorem facilis in tenetur expedita.
-          </span>
+          <>
+            <span>
+              <div></div>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta,
+              reiciendis.
+            </span>
+            <span>
+              <div></div>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatum, sit.
+            </span>
+            <span>
+              <div></div>Lorem ipsum dolor sit.
+            </span>
+          </>
         ),
         sender: "robot",
       },

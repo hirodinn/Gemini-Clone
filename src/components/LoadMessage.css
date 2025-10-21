@@ -7,6 +7,7 @@
   margin-left: 0;
   margin-right: auto;
   max-width: 530px;
+  color: var(--text-color);
 }
 .message.right {
   margin-left: auto;
@@ -21,40 +22,55 @@
 }
 
 .message p {
-  margin: 0 10px;
+  margin: 0 10px !important;
   margin-top: 7px;
   text-align: justify;
+  color: var(--text-color);
 }
 
-.message span {
-  background-color: gray;
-  color: transparent;
+.message-text span {
   position: relative;
-  line-height: 1.7;
+  display: block;
+  background-color: #4a4a4a;
+  color: transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 14px;
+  margin-bottom: 8px;
 }
-.message span::before {
-  content: "";
+
+/* vary widths for realism */
+.message-text span:nth-child(1) {
+  width: 300px;
+}
+.message-text span:nth-child(2) {
+  width: 260px;
+}
+.message-text span:nth-child(3) {
+  width: 180px;
+}
+
+.message-text span div {
   position: absolute;
   top: 0;
-  bottom: 0;
-  left: 0;
-  width: 24px;
+  left: -40%;
+  width: 20%;
+  height: 100%;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.664),
-    rgba(255, 255, 255, 0.829) 30%,
-    rgba(255, 255, 255, 0.829) 70%,
-    rgba(255, 255, 255, 0.603)
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
   );
-  margin-left: 5px;
-  animation: 0.9s loadingAnimation linear infinite;
+  animation: loadingAnimation 1.2s linear infinite;
 }
+
 @keyframes loadingAnimation {
   0% {
-    left: 0;
+    transform: translateX(0%);
   }
   100% {
-    left: 500px;
+    transform: translateX(500px);
   }
 }
 
@@ -64,7 +80,6 @@
   font-weight: bold;
   margin-top: 8px;
   margin-bottom: 4px;
-  color: #222;
 }
 
 .message-text p {
