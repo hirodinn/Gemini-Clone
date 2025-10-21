@@ -2,4 +2,10 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+.dark-mode-button i {
+  font-size: 30px;
+  background: transparent;
 }
