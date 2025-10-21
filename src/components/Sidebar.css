@@ -1,13 +1,14 @@
 .side-bar {
-  width: 70px;
+  width: 80px;
   height: 100%;
-  background-color: #f0f4f9;
+  background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
   transition: all 0.3s;
   white-space: nowrap;
   overflow: hidden;
   position: relative;
+  color: var(--text-color);
 }
 .side-bar.expand-side-bar {
   width: 200px;
@@ -42,8 +43,8 @@
   justify-content: center;
   padding: 0 14px;
   height: 50px;
-  background-color: #e6eaf1;
-  color: gray;
+  background-color: var(--chat-primary);
+  color: var(--text-color);
   font-size: 35px;
   border-radius: 40px;
   margin-left: 16px;
@@ -63,7 +64,6 @@
 }
 .side-bar .top-side-bar .recent-chat p {
   font-weight: bold;
-  color: black;
   margin: 10px;
   letter-spacing: 1px;
 }
@@ -79,7 +79,6 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  color: black;
   display: flex;
   height: 150px;
   display: flex;

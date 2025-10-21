@@ -1,8 +1,9 @@
 import "./MainPage.css";
 import { Main } from "./Main";
 import { useState } from "react";
+import { DarkModeButton } from "./DarkModeButton";
 
-export function MainPage({ data, sendMessage }) {
+export function MainPage({ data, sendMessage, setIsDark, isDark }) {
   const [inputValue, setInputValue] = useState("");
 
   function updateValue(event) {
@@ -65,6 +66,7 @@ export function MainPage({ data, sendMessage }) {
           double-check its responses. Your privacy and Gemini Apps
         </div>
       </footer>
+      <DarkModeButton isDark={isDark} setIsDark={setIsDark} />
     </main>
   );
 }

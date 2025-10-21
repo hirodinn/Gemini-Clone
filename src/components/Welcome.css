@@ -23,7 +23,8 @@
 .welcome-container .box-container .box {
   width: 170px;
   height: 200px;
-  background-color: #f0f4f9;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   padding: 10px;
   position: relative;
   border-radius: 10px;
@@ -31,7 +32,7 @@
   cursor: pointer;
 }
 .welcome-container .box-container .box:hover {
-  background-color: #c3c7cc;
+  background-color: var(--box-hover);
 }
 .welcome-container .box-container .box img {
   width: 35px;

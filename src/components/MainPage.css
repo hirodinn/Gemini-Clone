@@ -4,6 +4,7 @@ main {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: var(--main-primary);
 }
 main header {
   display: flex;
@@ -13,7 +14,7 @@ main header {
   padding: 0 20px;
   padding-top: 10px;
   margin-bottom: 50px;
-  color: #585858;
+  color: var(--text-color);
   font-size: 24px;
   font-weight: bold;
 }
@@ -38,7 +39,7 @@ main footer .footer-top {
   display: flex;
   align-items: center;
   height: 60px;
-  background: #f0f4f9;
+  background: var(--primary-color);
   padding-right: 20px;
   border-radius: 50px;
 }
@@ -58,6 +59,7 @@ main footer input {
   outline: none;
   padding-left: 20px;
   background: transparent;
+  color: var(--text-color);
 }
 main footer input::placeholder {
   color: gray;
@@ -67,6 +69,7 @@ main footer input:focus {
 }
 main footer .footer-bottom {
   font-size: 13px;
+  color: var(--text-color);
 }
 .hidden {
   display: none;
